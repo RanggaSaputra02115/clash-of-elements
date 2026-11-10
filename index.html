@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Clash of Elements</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<canvas id="fx" aria-hidden="true"></canvas>
+<header class="top">
+  <div class="brand"><h1>CLASH OF ELEMENTS</h1><p>A Strategic Card Battle</p></div>
+  <div class="round" id="roundInd">Round 1</div>
+  <div class="tools">
+    <button id="soundBtn" class="btn small" type="button">Sound: On</button>
+    <button id="restartBtn" class="btn small" type="button">Restart</button>
+  </div>
+</header>
+
+<main class="arena">
+  <section class="side bot">
+    <div class="avatar bot-av" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M8 30V16l6 4 6-10 6 10 6-4v14z" fill="currentColor"/></svg></div>
+    <div class="who"><b>BOT OPPONENT</b><span id="botCount">6 cards</span></div>
+    <div class="score"><span class="num" id="botScore">0</span><span class="pips" id="botPips"></span></div>
+  </section>
+
+  <section class="field" id="field">
+    <div class="ring" id="ringBox" aria-hidden="true"><svg id="ringSvg" viewBox="-100 -100 200 200"></svg></div>
+    <div class="slot" id="slotPlayer" aria-label="Your card"></div>
+    <div class="vs">VS</div>
+    <div class="slot" id="slotBot" aria-label="Bot card"></div>
+  </section>
+  <p class="status" id="status" aria-live="polite"></p>
+
+  <section class="side you">
+    <div class="avatar" aria-hidden="true"><svg viewBox="0 0 40 40"><circle cx="20" cy="14" r="7" fill="currentColor"/><path d="M6 36c0-9 6-14 14-14s14 5 14 14z" fill="currentColor"/></svg></div>
+    <div class="who"><b>PLAYER</b><span id="playerCount">6 cards</span></div>
+    <div class="score"><span class="num" id="playerScore">0</span><span class="pips" id="playerPips"></span></div>
+  </section>
+
+  <section class="hand" id="hand" aria-label="Your cards"></section>
+</main>
+
+<div class="overlay" id="menu">
+  <div class="panel">
+    <h2>CLASH OF ELEMENTS</h2>
+    <p class="sub">A Strategic Card Battle</p>
+    <p class="rules">Rock beats Scissors, Scissors beats Paper, Paper beats Rock.<br>Same element? Higher number wins. First to 3 points takes the arena.</p>
+    <button id="playBtn" class="btn big" type="button">PLAY</button>
+  </div>
+</div>
+
+<div class="overlay hidden" id="over">
+  <div class="panel" id="overPanel">
+    <h2 id="overTitle"></h2>
+    <p class="final" id="overScore"></p>
+    <button id="againBtn" class="btn big" type="button">PLAY AGAIN</button>
+  </div>
+</div>
+
+<canvas id="fxTop" aria-hidden="true"></canvas>
+<script src="js/cards.js"></script>
+<script src="js/bot.js"></script>
+<script src="js/fx.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>
